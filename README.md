@@ -1,2 +1,2 @@
 # Cheatsheets
-Chetsheets for beginning programmers
+Cheatsheets for beginning programmers
