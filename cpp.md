@@ -3,12 +3,13 @@
 - `std::ostream` specifies an output stream
 - `std::iostream` specifies an input/output stream
 ## Stream operators
-Stream operators can be used to read/write data into a stream<br>
-| stream >> data | Reads from stream into data |   |   |   |
-|----------------|-----------------------------|---|---|---|
-| stream << data | Writes data to stream       |   |   |   |
-|                |                             |   |   |   |
-|                |                             |   |   |   |   
+Stream operators can be used to read/write data into a stream
+
+| Operator       | Description                 |
+|----------------|-----------------------------|
+| stream << data | Writes data to stream       |
+| stream >> data | Reads from stream into data |
+|                |                             |
 ```cpp
 using namespace std;
 cout << "Hello world!" //Writes "Hello world!" to terminal output
