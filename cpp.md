@@ -4,9 +4,11 @@
 - `std::iostream` specifies an input/output stream
 ## Stream operators
 Stream operators can be used to read/write data into a stream<br>
-| stream >> data 	| Reads from stream into data
-|----------------	|-----------------------------
-| stream << data 	| Writes data to stream       
+| stream >> data | Reads from stream into data |   |   |   |
+|----------------|-----------------------------|---|---|---|
+| stream << data | Writes data to stream       |   |   |   |
+|                |                             |   |   |   |
+|                |                             |   |   |   |   
 ```cpp
 using namespace std;
 cout << "Hello world!" //Writes "Hello world!" to terminal output
