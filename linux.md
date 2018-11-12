@@ -3,6 +3,13 @@
 `cmd >> file` - Appends command output to file<br>
 `cmd > file` - Writes command output to file (destroying its old contents)<br>
 `cmd1 | cmd2` - Readirects output of `cmd1` to `cmd2`
+`*` - Wildcard, substituted for a letter
+ - Eg you have 4 files `aa ab ba bb`: `*` would be replaced by `aa ab ba bb` and `a*` would be replaced by `aa ab`
+# Linux filesystem
+`/` - The root, everthing must be inside of `/`
+`/sys` - System devices, such as keyboard LED's etc.
+`/dev` - Block devices, these can be anything really
+- `/dev/sd*`
 # Linux 101
 `cat` - Reads a file<br>
 `ls` - Lists all files in the current directory, similar to DOS's `DIR` command
@@ -29,7 +36,8 @@
 `ifconfig` - Views all active network interfaces, use the -a argument to show hidden interfaces<br>
 `iwconfig` - Views the wireless status of all wifi-enabled interfaces<br>
 `dhclient <iface>` - Configures DHCP for a specified interface<br>
-`lsusb/lspci` - Lists all devices on the usb/pci bus
+`lsusb/lspci` - Lists all devices on the usb/pci bus<br>
+`lsmod` - Lists all currently loaded kernel modules (aka. drivers)
 
 # Package management
 `apt/apt-get <mode>` - Most common package manager
