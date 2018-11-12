@@ -20,6 +20,8 @@
 - Lets say you need to find your DHCP configuration file, you can use `find /etc | grep dhcp`
 
 `pwd` - Prints your current working directory
+`sudo` - Gives you the privledges of another user, default root
+- Only certain users are allowed to use the `sudo` command, these users are the users specified by the `/etc/sudoers` file
 
 # Basic system administration
 `top/htop` - Views information about running processes, `htop` is formatted<br>
