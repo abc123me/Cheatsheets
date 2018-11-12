@@ -5,7 +5,7 @@
 `cmd1 | cmd2` - Readirects output of `cmd1` to `cmd2`
 # Linux 101
 `cat` - Reads a file<br>
-`ls` - Lists all files in the current directory, similar to DOS's `DIR` command<br>
+`ls` - Lists all files in the current directory, similar to DOS's `DIR` command
  - `-l` Makes the output detailed
  - `-a` Lists hidden files
  - `-R` List files in subdirectories too (as well as their subdirectories)
@@ -15,7 +15,7 @@
 `vi` - Fancy ass (but overly complicated) file editor<br>
 `nano` - Simple, good, easy-to-use file editor<br>
 `grep` - Searches for a pattern<br>
-`find` - Lists all files in the directory and subdirectories, same as `ls -Rla` but faster<br>
+`find` - Lists all files in the directory and subdirectories, same as `ls -Rla` but faster
 - A directory can be provided to filter the search
 - Lets say you need to find your DHCP configuration file, you can use `find /etc | grep dhcp`
 
