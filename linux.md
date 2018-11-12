@@ -21,10 +21,31 @@
   - If you write a space in the terminal normally it will interpret multiple arguments, to fix this we use the `\` character which allows typing special characters eg. `\ ` would make a space or `\\` would make a backslash
 
 # Linux filesystem
-`/` - The root, everthing must be inside of `/`
-`/sys` - System devices, such as keyboard LED's etc.
-`/dev` - Block devices, these can be anything really
-- `/dev/sd*`
+- `/` - The root, everthing must be inside of `/`
+- `/sys` - System devices, such as keyboard LED's etc.
+- `/dev` - Block devices, these can be anything really
+  - `/dev/sd*` - Normally hard drives
+  - `/dev/tty*` - Terminals, these can also be found in the `/dev/pts/*` directory
+- `/etc` - Configuration files, etc.
+  - `/etc/network/interfaces` - Network interface configuration file
+  - `/etc/rc.local` - Linux startup script, runs on startup
+  - `/etc/fstab` - Declares all drives including the root partition (aka. `/`)
+  - `/etc/default/grub` - GRUB Boot loader configuration file
+- `/home` and `/root` - Home directories for different users
+  - By default a normal user has a home folder at `/home/username`
+  - However, root has its own special folder at `/root`
+- `/lib` - Essential system libraries 
+- `/bin` - Essential system binaries (aka. programs)
+- `/usr` - User directory, anything belonging to a user goes here
+  - `/usr/bin` - User installed binaries
+  - `/usr/lib` - User installed libraries
+- `/proc` - Process specific files
+  - Whenever a process starts a folder is created here with is PID
+  - `/proc/cpuinfo` contains information about the CPU
+  - `/proc/stat` contains information about system resources such as CPU and Memory usage
+- `/tmp` - Temporary files, deleted when system is rebooted
+- `/var` - Logging and other system information
+- `/opt` - Optional files and folders (rarely used)
 # Linux 101
 ## Directory navigation
 - `cd` - Goes into a directory<br>
