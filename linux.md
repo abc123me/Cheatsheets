@@ -1,14 +1,17 @@
-# Command formatting
+# Linux 101 - Fundamentals
+## Command formatting
 - `command_name <arguments>`
 - Commands are normally found in locations such as `/bin` and `/usr/bin`, determined by your `PATH` variable
 - The `which` command will tell you the location of the command 
   - Eg. `which which` returns `/usr/bin/which`
+  
 ## Piping
-- `cmd >> file` - Appends command output to file<br>
-- `cmd > file` - Writes command output to file (destroying its old contents)<br>
-- `cmd 2> file` - Writes command errors to file (destroying its old contents)<br>
-- `cmd < file` - Reads file and uses it as input for cmd<br>
-- `cmd1 | cmd2` - Redirects output of `cmd1` to `cmd2`<br>
+- `cmd >> file` - Appends command output to file
+- `cmd > file` - Writes command output to file (destroying its old contents)
+- `cmd 2> file` - Writes command errors to file (destroying its old contents)
+- `cmd < file` - Reads file and uses it as input for cmd
+- `cmd1 | cmd2` - Redirects output of `cmd1` to `cmd2`
+
 ## Special files/letters/directories
 - `*` - Wildcard, substituted for a letter
   - Eg you have 4 files `aa ab ba bb`: `*` would be replaced by `aa ab ba bb` and `a*` would be replaced by `aa ab`
@@ -20,7 +23,7 @@
 - `\` - Escape character
   - If you write a space in the terminal normally it will interpret multiple arguments, to fix this we use the `\` character which allows typing special characters eg. `\ ` would make a space or `\\` would make a backslash
 
-# Linux filesystem
+## Linux filesystem
 - `/` - The root, everthing must be inside of `/`
 - `/sys` - System devices, such as keyboard LED's etc.
 - `/dev` - Block devices, these can be anything really
@@ -46,7 +49,8 @@
 - `/tmp` - Temporary files, deleted when system is rebooted
 - `/var` - Logging and other system information
 - `/opt` - Optional files and folders (rarely used)
-# Linux 101
+
+# Linux 101 - Commands
 ## Directory navigation
 - `cd` - Goes into a directory<br>
 - `ls` - Lists all files in the current directory, similar to DOS's `DIR` command
@@ -55,34 +59,47 @@
   - `-R` List files in subdirectories too (as well as their subdirectories)
   - `pwd` - Prints your current working directory<br>
 - `mkdir <name>` - Makes a directory
-`cat` - Reads a file<br>
+## File modification
+- `cat` - Reads a file<br>
+- `touch` - Creates/Updates a file<br>
+- `vi` - Fancy ass (but overly complicated) file editor<br>
+- `nano` - Simple, good, easy-to-use file editor<br>
+## Other commands
+- `tmux` - Termianl multiplexer, allows multiple terminals in one terminal
+  - `Ctrl + B then [Arrow key]` moves to another terminal
+  - `Ctrl + B then Ctrl + [Arrow keys]` resizes the current terminal
+  - `Ctrl + B then %` creates a new terminal to the right of the old terminal
+  - `Ctrl + B then "` creates a new terminal under the old terminal
+- `grep` - Searches for a pattern<br>
+- `find` - Recursively lists all files (not directories)
+  - A directory can be provided to filter the search
+  - Lets say you need to find your DHCP configuration file, you can use `find /etc | grep dhcp`
+- `sudo` - Gives you the privledges of another user, default root
+  - The username of the other user is specified with the `-u <user>` argument
+  - Only certain users are allowed to use the `sudo` command, these users are the users specified by the `/etc/sudoers` file
 
- 
-`touch` - Creates/Updates a file<br>
-`vi` - Fancy ass (but overly complicated) file editor<br>
-`nano` - Simple, good, easy-to-use file editor<br>
-`grep` - Searches for a pattern<br>
-`find` - Lists all files in the directory and subdirectories, same as `ls -Rla` but faster
-- A directory can be provided to filter the search
-- Lets say you need to find your DHCP configuration file, you can use `find /etc | grep dhcp`
 
-`sudo` - Gives you the privledges of another user, default root
-- The username of the other user is specified with the `-u <user>` argument
-- Only certain users are allowed to use the `sudo` command, these users are the users specified by the `/etc/sudoers` file
-
-# Basic system administration
-`top/htop` - Views information about running processes, `htop` is formatted<br>
-`ifconfig` - Views all active network interfaces, use the -a argument to show hidden interfaces<br>
-`iwconfig` - Views the wireless status of all wifi-enabled interfaces<br>
-`dhclient <iface>` - Configures DHCP for a specified interface<br>
-`lsusb/lspci` - Lists all devices on the usb/pci bus<br>
-`lsmod` - Lists all currently loaded kernel modules (aka. drivers)
-
-# Package management
-`apt/apt-get <mode>` - Most common package manager
-- `install` installs a package
-- `remove` removes a package
-- `update` - Updates all packages
-- `upgrade` - Upgrades the current linux kernel
-- `purge` - Removes a package AND its configuration files
-- `autoremove` - Removes all unused packages
+# Linux 101 - Basic system administration
+## Resource monitoring
+- `top` - Views information about running processes and system resources
+- `htop` - A formatted version of `top` (which has color)
+## Hardware monitoring
+- `lsusb/lspci` - Lists all devices on the usb/pci bus
+- `lsmod` - Lists all currently loaded kernel modules (aka. drivers)
+- `lshw` - Lists all hardware attached to the computer
+  - The `-C <name>` option can be used to list all items of a specific class
+  - Eg. `lshw -C Memory` lists all memory in the computer
+## Networking
+- `ifconfig` - Views all active network interfaces, use the -a argument to show hidden interfaces
+  - `ifconfig <iface> <ip>` - Changes the IP of `<iface>` to `<ip>`
+- `iwconfig` - Views the wireless status of all wifi-enabled interfaces
+- `iptables` - Modifies the kernel's routing tables
+- `dhclient <iface>` - Configures DHCP for a specified interface
+## Package management
+- `apt/apt-get <mode>` - Most common package manager
+  - `install` installs a package
+  - `remove` removes a package
+  - `update` - Updates all packages
+  - `upgrade` - Upgrades the current linux kernel
+  - `purge` - Removes a package AND its configuration files
+  - `autoremove` - Removes all unused packages
