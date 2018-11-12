@@ -28,6 +28,7 @@
 `top/htop` - Views information about running processes, `htop` is formatted<br>
 `ifconfig` - Views all active network interfaces, use the -a argument to show hidden interfaces<br>
 `iwconfig` - Views the wireless status of all wifi-enabled interfaces<br>
+`dhclient <iface>` - Configures DHCP for a specified interface<br>
 `lsusb/lspci` - Lists all devices on the usb/pci bus
 
 # Package management
