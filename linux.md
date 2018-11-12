@@ -19,8 +19,9 @@
 - A directory can be provided to filter the search
 - Lets say you need to find your DHCP configuration file, you can use `find /etc | grep dhcp`
 
-`pwd` - Prints your current working directory
+`pwd` - Prints your current working directory<br>
 `sudo` - Gives you the privledges of another user, default root
+- The username of the other user is specified with the `-u <user>` argument
 - Only certain users are allowed to use the `sudo` command, these users are the users specified by the `/etc/sudoers` file
 
 # Basic system administration
