@@ -4,7 +4,7 @@
 `cat` - Reads a file<br>
 `ls` - Lists all files in the current directory, similar to DOS's `DIR` command<br>
 - `-l` Makes the output detailed
-- `-a` Lists hidden files
+- `-a` Lists hidden files<br>
 `cd` - Goes into a directory<br>
 `touch` - Creates/Updates a file<br>
 `vi` - Fancy ass (but overly complicated) file editor<br>
