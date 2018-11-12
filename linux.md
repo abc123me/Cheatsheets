@@ -49,6 +49,10 @@
 - `/tmp` - Temporary files, deleted when system is rebooted
 - `/var` - Logging and other system information
 - `/opt` - Optional files and folders (rarely used)
+- `/media` and `/mnt`
+  - Normally used as places to mount drives, etc.
+  - `/mnt` normally contains user specially mounted devices
+  - `/media` normally contains media such as cd-roms, flashdrives, floppies, etc.
 
 # Linux 101 - Commands
 ## Directory navigation
@@ -70,7 +74,9 @@
   - `Ctrl + B then Ctrl + [Arrow keys]` resizes the current terminal
   - `Ctrl + B then %` creates a new terminal to the right of the old terminal
   - `Ctrl + B then "` creates a new terminal under the old terminal
-- `grep` - Searches for a pattern<br>
+- `grep` - Searches for a pattern
+  - Lets say you forgot where your `hello.conf` file is
+  - `find / | grep hello.conf` will show you all files in your computer that contains `hello.conf` in their filenames
 - `find` - Recursively lists all files (not directories)
   - A directory can be provided to filter the search
   - Lets say you need to find your DHCP configuration file, you can use `find /etc | grep dhcp`
