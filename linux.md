@@ -68,12 +68,14 @@
 - `touch` - Creates/Updates a file<br>
 - `vi` - Fancy ass (but overly complicated) file editor<br>
 - `nano` - Simple, good, easy-to-use file editor<br>
-## Other commands
+## Other useful stuff
 - `tmux` - Termianl multiplexer, allows multiple terminals in one terminal
   - `Ctrl + B then [Arrow key]` moves to another terminal
   - `Ctrl + B then Ctrl + [Arrow keys]` resizes the current terminal
   - `Ctrl + B then %` creates a new terminal to the right of the old terminal
   - `Ctrl + B then "` creates a new terminal under the old terminal
+  - `Ctrl + B then x` force kill the current terminal
+  - `Ctrl + B then d` Detach so you can access it again with `tmux attach` after logout
 - `grep` - Searches for a pattern
   - Lets say you forgot where your `hello.conf` file is
   - `find / | grep hello.conf` will show you all files in your computer that contains `hello.conf` in their filenames
@@ -88,20 +90,27 @@
 # Linux 101 - Basic system administration
 ## Resource monitoring
 - `top` - Views information about running processes and system resources
-- `htop` - A formatted version of `top` (which has color)
+- `htop` - A formatted version of `top` (it also has color and custom themes)
+- `cat /proc/stat` - Raw CPU time data, useful for scripts
 ## Hardware monitoring
 - `lsusb/lspci` - Lists all devices on the usb/pci bus
-- `lsmod` - Lists all currently loaded kernel modules (aka. drivers)
 - `lshw` - Lists all hardware attached to the computer
   - The `-C <name>` option can be used to list all items of a specific class
   - Eg. `lshw -C Memory` lists all memory in the computer
+- `lscpu` - Lists info about the current CPU(s) installed
+## Kernel modules / Drivers
+- `lsmod` - Lists all currently loaded kernel modules
+- `modprobe` - General tool for managing kernel modules
+- `insmod` - Insert a kernel module
+- `rmmod` - Remove a kernel module
 ## Networking
 - `ifconfig` - Views all active network interfaces, use the -a argument to show hidden interfaces
   - `ifconfig <iface> <ip>` - Changes the IP of `<iface>` to `<ip>`
 - `iwconfig` - Views the wireless status of all wifi-enabled interfaces
 - `iptables` - Modifies the kernel's routing tables
 - `dhclient <iface>` - Configures DHCP for a specified interface
-## Package management
+## Software stuff
+- `uname` - Gets kernel info, add `-r` to get the kernel version
 - `apt/apt-get <mode>` - Most common package manager
   - `install` installs a package
   - `remove` removes a package
