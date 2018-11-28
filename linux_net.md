@@ -17,7 +17,8 @@ jeremiah@linux-pc:~$ echo "Hello, client!" | nc -l 1234
 hello server
 ```
 As you can see in the example a network socket is created between the two processes even though they are on the same machine.
-Interface's appearence in `ifconfig`:
+
+Here's what the interface looks like in `ifconfig`:
 ```
 lo        Link encap:Local Loopback  
           inet addr:127.0.0.1  Mask:255.0.0.0
