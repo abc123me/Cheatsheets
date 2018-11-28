@@ -118,3 +118,12 @@
   - `upgrade` - Upgrades the current linux kernel
   - `purge` - Removes a package AND its configuration files
   - `autoremove` - Removes all unused packages
+- `dmesg` - System logs, piping into `tail` can be useful
+  - Eg. `dmesg | tail -n 5` tells you the last 5 things that happened, in my case ```
+    [887434.014362] bnx2 0000:05:00.0 enp5s0f0: NIC Copper Link is Up, 10 Mbps full duplex
+    [887434.014394] , receive & transmit flow control ON
+    [887434.014532] br0: port 3(enp5s0f0) entered forwarding state
+    [887434.014571] br0: port 3(enp5s0f0) entered forwarding state
+    [887449.052067] br0: port 3(enp5s0f0) entered forwarding state
+  ```
+- `journalctl` - More system logs
