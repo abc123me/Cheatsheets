@@ -110,7 +110,7 @@
 - `iwconfig` - Views the wireless status of all wifi-enabled interfaces
 - `iptables` - Modifies the kernel's routing tables
 - `dhclient <iface>` - Configures DHCP for a specified interface
-- [Linux networking](https://github.com/abc123me/Cheatsheets/edit/master/linux_net.md)
+- [Linux networking](https://github.com/abc123me/Cheatsheets/blob/master/linux_net.md)
 ## Software stuff
 - `uname` - Gets kernel info, add `-r` to get the kernel version
 - `apt/apt-get <mode>` - Most common package manager
