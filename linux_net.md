@@ -17,8 +17,37 @@ jeremiah@linux-pc:~$ echo "Hello, client!" | nc -l 1234
 hello server
 ```
 As you can see in the example a network socket is created between the two processes even though they are on the same machine.
+Interface's appearence in `ifconfig`:
+```
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:3252 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:3252 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1 
+          RX bytes:195120 (195.1 KB)  TX bytes:195120 (195.1 KB)
+```
 ### Ethernet / WiFi
 Depending on your linux distribution the naming scheme of interfaces can change but for WiFi and ethernet this is normally a result of the following formula `enp + VENDOR_ID + s + PORT_ID` so if you had a dual port ethernet card with a `VENDOR_ID` of 5 you would see `enp5s0` and `enp5s1` in `ifconfig`, Wireless is the same way but the `enp` is replaced with `wlp`. However do not rely on this naming scheme since it isn't the same for all devices and distributions. For example in debian ethernet cards are `eth0, eth1, ethN`, and wireless is `wlan0, wlan1, wlanN`.
+```
+wlp7s0    Link encap:Ethernet  HWaddr ******************
+          inet addr:*************  Bcast:*************  Mask:*************
+          inet6 addr: *************************************** Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:33847269 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:16498510 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:28253210374 (28.2 GB)  TX bytes:2207797468 (2.2 GB)
+
+enp4s0f0  Link encap:Ethernet  HWaddr ******************
+          inet6 addr: *************************************** Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:16515158 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:33628723 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:1859829626 (1.8 GB)  TX bytes:28136492504 (28.1 GB)
+```
 ### Uncommon interface types
 #### Bridges (from package `bridge-utils`)
 Bridges allow you to connect multiple interfaces together to make one big network interface, using this you can create your own network switches, redundent connections, and multiple cable connections for faster speeds. Normally named `brN`, however that isn't a strict requirement but just a naming convention. They can be configured manually with `brctl` however not with `ifconfig`
@@ -27,7 +56,7 @@ Bridge on my personal routing server:
 ```
 br0       Link encap:Ethernet  HWaddr *****************
           inet addr:192.168.1.1  Bcast:192.168.1.255  Mask:255.255.255.0
-          inet6 addr: fe80::210:18ff:fea2:4150/64 Scope:Link
+          inet6 addr: *************************************** Scope:Link
           UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
           RX packets:16481359 errors:0 dropped:0 overruns:0 frame:0
           TX packets:33788964 errors:0 dropped:0 overruns:0 carrier:0
