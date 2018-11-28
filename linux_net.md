@@ -42,10 +42,7 @@ auto br0
 iface br0 inet static
 	address 192.168.1.1
 	netmask 255.255.255.0
-	bridge-ports enp4s0f0 enp4s0f1
-	bridge-ports enp5s0f0 enp5s0f1
-	bridge-ports enp6s0
-	bridge-ports enp0s7
+	bridge-ports enp4s0f0 enp4s0f1 enp5s0f0 enp5s0f1 enp6s0 enp0s7
 ```
 ### Local loopback
 All linux distributions come with a default local loopback interface known as `lo`, this interface will always have an IP address of `127.0.0.1` or `localhost`. All network traffic heading to it is routed to the local host (hence the name) aka. your computer. Why is this useful? Well lets say you're testing you're new website on a local webserver and you want to access it from your current computer. Rather then entering your computers IP you can just provide `localhost` and it will automatically redirect to your computer. Heres an example of that in action:<br>
